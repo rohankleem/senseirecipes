@@ -1,0 +1,44 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "6860af7f-2853-47f4-ad72-08ff34ee947b",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"getParameter\"\n    type: \"javax.servlet.ServletRequest\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"use getAlphaNumericParameter\"\n  actions:\n  - rewrite:\n      to: \"getAlphaNumericParameter({{{ qualifier }}}, {{{ arguments.0 }}})\"\n",
+        "ruleName": "use getalphanumeric function",
+        "ruleID": "6320a26c-b311-4377-8a3c-1aa230e95aad",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "DOn\u0027t user getparameter (we\u0027re moving away from this :)",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"getParameter\"\n    type: \"javax.servlet.ServletRequest\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use getAlphaNUmericparameter\"\n  actions:\n  - rewrite:\n      to: \"this.getAlphaNumericParameter({{{ qualifier }}}, {{{ arguments.0 }}}\"\n",
+        "ruleName": "Use getAlphaNumericParameters",
+        "ruleID": "7a2ec09f-877d-493f-83be-c9887e020b6a",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Don\u0027t use this function anymore please :)",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    }
+  ],
+  "generators": []
+}
